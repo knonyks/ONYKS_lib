@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row-fluid">
+	<div class="span7">
+		<table class="table table-bordered">
+		<tr>
+			<th>Table</th>
+			<!-- <th>Parts</th> -->
+		</tr>
+		{% for table in tables %}
+			<tr>
+				<td>
+                                    <div class="span1">
+                                        <img src="{{ table_image(table) }}" style="width: 70px;" />
+                                    </div>
+                                    <div class="span11">
+                                        <a href="{{url_for('table', name=table)}}">{{prettify(table)}}</a>
+                                    </div>
+                                </td>
+				<!--  <td>&nbsp;</td> -->
+			</tr>
+		{% endfor %}
+		</table>
+	</div>
+	<div class="span5">
+		<table class="table table-bordered">
+			<tr>
+			<th>
+			Subversion Library Info</th></tr>
+			<tr>
+				<td>Subversion Connection:</td>
+				<td>
+					{% if info.svn_ok %}
+						<span class="label label-success">OK</span>
+					{% else %}
+						<span class="label label-important">Error</span>
+					{% endif %}
+				</td>
+			</tr>
+			<tr>
+				<td>Symbol Files:</td>
+				<td>{{info.syms}}</td>
+			</tr>
+			<tr>
+				<td>Footprint Files:</td>
+				<td>{{info.ftpts}}</td>
+			</tr>
+		</table>
+		<table class="table table-bordered">
+			<tr>
+			<th>
+			Database Info</th></tr>
+			<tr>
+				<td>Database Connection:</td>
+				<td>
+					{% if info.db_ok %}
+						<span class="label label-success">OK</span>
+					{% else %}
+						<span class="label label-important">Error</span>
+					{% endif %}
+				</td>
+			</tr>
+			<tr>
+				<td>Tables:</td>
+				<td>{{info.db_tables}}</td>
+			</tr>
+		</table>
+		<a class="btn" href="{{url_for('export')}}"><i class="icon-list-alt"></i> Export ADL Database...</a>
+
+	</div>
+</div>
+
+{% endblock %}

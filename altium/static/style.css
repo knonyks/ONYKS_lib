@@ -1,0 +1,36 @@
+body {
+    padding-top: 60px;
+}
+
+.component-table {
+    font-size: 11px;
+}
+
+.action-cell {
+    white-space: nowrap;
+}
+
+.pull-down {
+    border: 1px dashed red;
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom-row {
+	position: relative;
+}
+
+.bottom-span {
+	position: absolute;
+	bottom: 0;
+	padding-right: 40px;
+	padding-bottom: 10px;
+}
+
+th {
+	white-space: nowrap;
+}
+
+table {
+	max-width: none;
+}

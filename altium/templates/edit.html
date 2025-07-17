@@ -1,0 +1,17 @@
+{% from "util.html" import render_field %}
+{% extends "base.html" %}
+{% block content %}
+<form method="post" class="form-horizontal">
+    {{ form.hidden_tag() }}
+    {% for field in form %}
+        {{ render_field(field, label=True) }}
+    {% endfor %}
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>
+<script type="text/javascript">
+    var sch = {{sch|tojson|safe}}
+    var ftpt = {{ftpt|tojson|safe}}
+    $('#id_footprint_ref').typeahead({source:ftpt})
+    $('#id_library_ref').typeahead({source:sch})
+</script>
+{% endblock %}

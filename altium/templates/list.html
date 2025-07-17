@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Author</th>
+		<th>Size</th>
+	</tr>
+	{% for name, info in data.items() %}
+	<tr>
+		<td><a href="{{url_for('get_file', name=name, type=type)}}">{{name}}</a></td>
+		<td>{{info['author']}}</td>
+		<td>{{sizeof(info['size'])}}</td>
+	</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
+
