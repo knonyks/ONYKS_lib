@@ -12,11 +12,23 @@ A simple web-frontend for managing components in Altium Designer.  This is for y
 The database can contain anything you want. The original author uses reflection to see what's in each table. Nonetheless the database MUST include certain fields, including at least the following:
 
     - uuid (must be the primary key)
-    - id
-    - library_ref
-    - footprint_ref
-    - status
-    
+    - part_name     #unique part number,tylko 
+    - part_value    #=part_name jesli scalak a 100K jesli opornik/kondensator, =comment w altiumie
+    - kategoria # ic,res,cap
+    - description #  krótki opis
+    - symbol_ref    #  wiadomo
+    - footprint_ref # wiadomo
+    - availability  #  duzo,malo brak
+    - distributor_link   # link do lcsc,tme, mouser, cokolwiek
+    - datasheet_ref # sciezka do pdfa na serwerze
+
+
+r_0603_100K
+ic_adc123
+
+RES_0603
+
+
 Both uuid and id will not be shown in any of the displays. You'll never know they're there. But if uuid is not the primary key, almost nothing will work right. Particularly the copy part/edit part features.
     
 If you use a sqlite database, the process must have rw access to it. I usually chmod 644 it. If you put it in the altium directory, you can refer to it as sqlite:///database.sqlite, however there are probably lots of reasons to avoid doing this. In particular only one write at a time is supported by sqlite, so if you have a lot of users that's a bad idea.
