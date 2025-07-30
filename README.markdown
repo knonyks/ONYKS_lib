@@ -42,3 +42,33 @@ If you use a sqlite database, the process must have rw access to it. I usually c
 Thanks to Ryan Sturmer who wrote the original application.
 
 Thanks to Michael Fogleman of http://michaelfogleman.com who developed the HelloFlask starting point from which this application is derived.
+## COnnecting to database
+### IF NO .DBLIB FILE
+Install psqlodbc.msi_x64
+Open ODBC Data Sources (64-bit) in Windows
+Add...
+PostgreSQL Unicode(x64)
+![alt text](image.png)
+instead of localhost, use the IP address of the server
+Test connection
+save
+ok
+
+Open altium designer
+New > Library... > Database > Database Library
+Create
+Select Use Connection String
+Paste this:
+Provider=MSDASQL.1;Persist Security Info=False;User ID=postgres;Data Source=PostgreSQL35W;Initial Catalog=altium_lib;Option=2;
+Advanced...
+Put " in Left Quote Character 
+and " in Right Quote Character
+Click OK
+Connect 
+everything should be ok
+### THEN
+Open library preferences
+Install
+select .DbLib file
+ok
+
