@@ -4,15 +4,15 @@ All configuration options live here
 '''
 
 SECRET_KEY = 'ALTIUM DESIGNER LIBRARY SECRET KEY 379164825'
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres@localhost/altium_lib'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:1234@localhost/altium_library'
 STATIC_ROOT = None
 
-ALTIUM_SVN_URL = 'https://LAPTOP-0FDRGRER/svn/altium_lib/'
-ALTIUM_SVN_USER = 'M'
-ALTIUM_SVN_PASS = 'xd'
+ALTIUM_SVN_URL = 'https://Xenon02/svn/database/'
+ALTIUM_SVN_USER = 'Xenon02'
+ALTIUM_SVN_PASS = '1234'
 
-ALTIUM_SYM_PATH = '/symbol'
-ALTIUM_FTPT_PATH = '/footprint'
+ALTIUM_SYM_PATH = '/SYM'
+ALTIUM_FTPT_PATH = '/FTPT'
 
 SESSION_PATH = '.sessions'
 

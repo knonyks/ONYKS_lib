@@ -346,6 +346,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 1px solid var(--gray);
+    border-left: 3px solid var(--primary);
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
