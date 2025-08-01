@@ -364,11 +364,11 @@ body {
     font-weight: bold;
     color: var(--light);
     transition: all 0.3s ease;
-    line-height: 1; /* Dodane aby zapobiec niepotrzebnym odstępom */
+    line-height: 1; 
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px; /* Stała wysokość dla ikon */
+    height: 40px;
 }
 
 .btn-label {
@@ -497,5 +497,151 @@ tr:hover {
     
     th, td {
         padding: 12px 16px;
+    }
+}
+
+/* ============================================= */
+/* ZAKŁADKA IMPORT */
+/* ============================================= */
+
+.form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.form-column {
+    background: var(--dark-light);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--gray);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    background: var(--gray);
+    border: 1px solid var(--dark-light);
+    border-radius: 8px;
+    color: var(--light);
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(203, 37, 37, 0.3);
+}
+
+.file-upload {
+    border: 2px dashed var(--gray);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.file-upload:hover {
+    border-color: var(--primary);
+    background: rgba(203, 37, 37, 0.05);
+}
+
+.file-upload input {
+    display: none;
+}
+
+.file-upload-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.preview-container {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.file-preview {
+    width: 100px;
+    background: var(--dark);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--gray);
+}
+
+.file-preview img {
+    max-width: 60px;
+    max-height: 60px;
+    margin-bottom: 5px;
+}
+
+.file-preview-name {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.submit-section {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray);
+}
+
+.section-title {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--secondary);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .add-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .form-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
